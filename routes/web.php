@@ -8,11 +8,12 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\PhotoController; 
 
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hello', [WelcomeController::class,'hello']); 
+Route::get('/greeting', [WelcomeController::class, 'greeting']);
 
 Route::get('/world', function () { 
     return 'World'; 
@@ -41,3 +42,5 @@ Route::resource('photos', PhotoController::class)->only([
 Route::resource('photos', PhotoController::class)->except([ 
 'create', 'store', 'update', 'destroy' 
 ]);
+
+Route::get('/greeting', [WelcomeController::class, 'greeting']);
